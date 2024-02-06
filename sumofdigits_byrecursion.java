@@ -1,14 +1,24 @@
 package com.iflak;
 
-public class sumofdigits_byrecursion {
+public class SumOfDigitsByRecursion {
     public static void main(String[] args) {
-      int ans=  sumofdigits(3214);
-        System.out.println(ans);
+        // Example usage: finding the sum of digits of the number 3214
+        int result = sumOfDigits(3214);
+        System.out.println("Sum of digits: " + result);
     }
-   static int sumofdigits(int n){
-        if(n==0){
+
+    /**
+     * Recursively calculates the sum of digits in a given number.
+     *
+     * @return The sum of digits of the given number.
+     */
+    static int sumOfDigits(int n) {
+        // Base case: If the number is 0, the sum is 0.
+        if (n == 0) {
             return 0;
         }
-        return (n%10)+sumofdigits(n/10);
-   }
+
+        // Recursive case: Return the last digit plus the sum of digits of the remaining number.
+        return (n % 10) + sumOfDigits(n / 10);
+    }
 }
